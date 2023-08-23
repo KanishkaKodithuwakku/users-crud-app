@@ -4,7 +4,10 @@ npx create-react-app users-crud-app \
 npm uninstall @testing-library/jest-dom \
 npm uninstall @testing-library/react \
 npm uninstall @testing-library/user-event \
-npm uninstall web-vitals 
+npm uninstall web-vitals \
+npm install styled-components@5.3.5 \
+npm install styled-components-modifiers --save
+
 
 
 ## Available Scripts
