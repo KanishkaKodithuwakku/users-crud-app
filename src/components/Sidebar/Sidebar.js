@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 export const SideNav = styled.ul`
@@ -24,20 +25,19 @@ export const SideNavItem = styled.li`
   }
 `;
 
-function onClickHandler(path) {
-    alert(path);
-}
 
 const Sidebar = () => {
+  const history = useHistory();
+  function onClickHandler(path) {
+      history.push(`/${path}`);
+  }
   return (
     <SideNav>
-      <SideNavItem onClick={() => onClickHandler("/")} path="/">
-        Dashboard
-      </SideNavItem>
-      <SideNavItem onClick={() => onClickHandler("/addUser")} path="/addUser">
-        All Users
-      </SideNavItem>
-      <SideNavItem onClick={() => onClickHandler("/allUser")} path="/allUser">
+      <SideNavItem onClick={() => onClickHandler("")}>Dashboard</SideNavItem>
+
+      <SideNavItem onClick={() => onClickHandler("users")}>Users</SideNavItem>
+
+      <SideNavItem onClick={() => onClickHandler("create")}>
         Add New User
       </SideNavItem>
     </SideNav>

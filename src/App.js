@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import UserForm from './components/UserForm';
 import NotFound from './NotFound/NotFound';
+import UsersList from './components/UsersList/UsersList';
 
 
 function App() {
@@ -15,11 +16,34 @@ function App() {
     <Router>
       <Layouts>
         <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Route path="/profile/:id" component={Profile} />
-          <Route path="/create" component={UserForm} />
-          <Route path="/edit/:id" component={UserForm} />
-          <Route path="*" component={NotFound} />
+          <Route
+            exact
+            path="/"
+            component={Dashboard}
+            key={window.location.pathname}
+          />
+          <Route
+            exact
+            path="/users"
+            component={UsersList}
+            key={window.location.pathname}
+          />
+          <Route
+            path="/profile/:id"
+            component={Profile}
+            key={window.location.pathname}
+          />
+          <Route
+            path="/create"
+            component={UserForm}
+            key={window.location.pathname}
+          />
+          <Route
+            path="/edit/:id"
+            component={UserForm}
+            key={window.location.pathname}
+          />
+          <Route path="*" component={NotFound} key={window.location.pathname} />
         </Switch>
       </Layouts>
       <GlobalStyles />
