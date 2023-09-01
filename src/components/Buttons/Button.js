@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  background-color: #007bff; /* Primary Blue */
+  background-color: ${props=> props.backColor}; /* Primary Blue */
   border: 1px solid #007bff;
   padding: 0.1rem 0.55rem;
   font-size: 1rem;
@@ -31,10 +31,12 @@ const BtnWrapper = styled.div`
   margin: 0 1px;
 `;
 
-const Button = ({ btnText, handleOnClick }) => {
+const Button = ({ btnText, handleOnClick, btnType ,color }) => {
   return (
     <BtnWrapper>
-      <StyledButton onClick={handleOnClick}>{btnText}</StyledButton>
+      <StyledButton type={btnType} backColor={color} onClick={handleOnClick}>
+        {btnText}
+      </StyledButton>
     </BtnWrapper>
   );
 };

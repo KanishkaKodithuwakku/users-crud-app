@@ -4,8 +4,9 @@ import  styled  from "styled-components";
 const InputWrapper = styled.div`
   padding: 5px;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props =>props.direction === 'row'? 'row' : 'column'};
   max-width: 500px;
+  margin-top: 10px;
 `;
 
 const StyledLabel = styled.label`
@@ -32,8 +33,8 @@ const StyledInput = styled.input`
   }
 `;
 
-const TextInput = ({name, label,onChangeHandler }) => {
-  const [value, setValue] = useState('')
+const TextInput = ({ name, label, onChangeHandler, placeholder }) => {
+  const [value, setValue] = useState("");
 
   const handleInputChange = (e) => {
     setValue(e.target.value);
@@ -41,14 +42,14 @@ const TextInput = ({name, label,onChangeHandler }) => {
   };
 
   return (
-    <InputWrapper>
-      
+    <InputWrapper direction="column">
       {label && <StyledLabel className="">{label}</StyledLabel>}
       <StyledInput
         className=""
         type="text"
         value={value}
         onChange={handleInputChange}
+        placeholder={placeholder}
       />
     </InputWrapper>
   );

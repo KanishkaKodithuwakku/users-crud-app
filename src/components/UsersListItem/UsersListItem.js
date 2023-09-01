@@ -4,6 +4,11 @@ import Button from "../Buttons";
 
 const Item = styled.li`
   font-weight: var(--font-weight-normal);
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-top: 5px;;
 `;
 
 const Flex = styled.div`

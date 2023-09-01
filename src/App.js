@@ -20,30 +20,25 @@ function App() {
             exact
             path="/"
             component={Dashboard}
-            key={window.location.pathname}
           />
           <Route
             exact
             path="/users"
             component={UsersList}
-            key={window.location.pathname}
           />
           <Route
             path="/profile/:id"
             component={Profile}
-            key={window.location.pathname}
           />
           <Route
             path="/create"
             component={UserForm}
-            key={window.location.pathname}
           />
           <Route
             path="/edit/:id"
             component={UserForm}
-            key={window.location.pathname}
           />
-          <Route path="*" component={NotFound} key={window.location.pathname} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Layouts>
       <GlobalStyles />

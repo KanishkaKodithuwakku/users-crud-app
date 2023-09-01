@@ -6,9 +6,15 @@ import useUserThunkReducer, {
 } from "../../hooks/useUserReducer";
 import UsersListItem from "../UsersListItem/UsersListItem";
 import styled from "styled-components";
+import Titlebar from "../TitleBar/Titlebar";
 
 const MainWrapper = styled.div`
   padding: 20px 20px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  max-width: 500px;
+  margin-top: 10px;
 `;
 
 const UserListWrapper = styled.ul`
@@ -16,6 +22,7 @@ const UserListWrapper = styled.ul`
   margin: 0;
   list-style: none;
   max-width: 500px;
+  
 `;
 
 const UsersList = () => {
@@ -31,7 +38,7 @@ const UsersList = () => {
 
   return (
     <MainWrapper>
-      <h1>Users</h1>
+      <Titlebar title={`Users`}/>
       <UserListWrapper>
         {users.map((user, index) => (
           <UsersListItem handleDelete={() => handleDelete(index)} key={index}>
