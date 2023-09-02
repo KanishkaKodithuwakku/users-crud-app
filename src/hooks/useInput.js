@@ -7,6 +7,10 @@ export default function useInput(initialValue) {
         setValue(initialValue)
     }
 
+    const set = (val) => {
+      setValue(val);
+    };
+
     const bind = {
         value,
         onChange: e => { 
@@ -14,5 +18,5 @@ export default function useInput(initialValue) {
         }
     }
 
-    return [value, bind, reset]
+    return [value, bind, reset, set]
 }

@@ -1,12 +1,14 @@
-import React from "react";
-import useUserThunkReducer, {
-  userReducer,
-  defaultData,
-} from "../hooks/useUserReducer";
+import React, { useContext } from "react";
+// import useUserThunkReducer, {
+//   userReducer,
+//   defaultData,
+// } from "../hooks/useUserReducer";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SpaceBetween } from "../common/Flexs";
 import { ButtonPrimary } from "../common/Buttons";
+
+import { UserContext } from "../App";
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -22,7 +24,7 @@ const StyledLi = styled.li`
 `;
 
 const Users = () => {
-  const [state] = useUserThunkReducer(userReducer, defaultData);
+  const { state, dispatch } = useContext(UserContext);
 
   const { users } = state;
   return (
@@ -34,8 +36,8 @@ const Users = () => {
           users.map((user, index) => (
             <StyledLi key={index}>
               <SpaceBetween>
-                <Link to={`/profile/:${user.name}`}>{user.name}</Link>
-                <ButtonPrimary>Edit</ButtonPrimary>
+                <Link to={`/profile/${user.id}`}>{user.name}</Link>
+                <Link to={`/edit/${user.id}`}>Edit</Link>
               </SpaceBetween>
             </StyledLi>
           ))}

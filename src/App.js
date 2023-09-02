@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserForm from "./components/UserForm";
@@ -7,7 +7,7 @@ import Notfound from "./components/NotFound";
 import Users from './components/Users';
 import Profile from './components/Profile';
 import GlobalStyles from "./common/GlobalStyles";
-
+import { userReducer, ACTIONS, initialState } from './hooks/userReducer'
 
 
 const Wrapper = styled.div`
@@ -41,9 +41,11 @@ const StyledLink = styled(Link)`
   }
 `;
 
-
+ export const UserContext = React.createContext();
 function App() {
+ const [state, dispatch] = useReducer(userReducer, initialState);
   return (
+    <UserContext.Provider value={{ state, dispatch }}>
     <Router>
       <Wrapper>
         <StyledNav>
@@ -55,12 +57,14 @@ function App() {
           <Route exact={true} path="/" component={Home} />
           <Route path="/users" component={Users} />
           <Route path="/create" component={UserForm} />
+          <Route path="/edit/:id" component={UserForm} />
           <Route path="/profile/:id" component={Profile} />
           <Route path="*" component={Notfound} />
         </Switch>
         <GlobalStyles />
       </Wrapper>
     </Router>
+    </UserContext.Provider>
   );
 }
 
