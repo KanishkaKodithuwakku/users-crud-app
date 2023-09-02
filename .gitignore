@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 .env
-
+chatgpt.txt
+commands_used.txt
 # testing
 /coverage
 

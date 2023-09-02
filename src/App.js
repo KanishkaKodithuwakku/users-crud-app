@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Notfound from "./components/NotFound";
 import Users from './components/Users';
 import Profile from './components/Profile';
+import GlobalStyles from "./common/GlobalStyles";
 
 
 
@@ -26,7 +27,7 @@ const StyledLink = styled(Link)`
   color: #333;
   margin: 0 10px; // Adds some spacing between the links
   padding: 5px 10px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
   &:hover {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/profile/:id" component={Profile} />
           <Route path="*" component={Notfound} />
         </Switch>
+        <GlobalStyles />
       </Wrapper>
     </Router>
   );

@@ -5,6 +5,32 @@ import useUserThunkReducer, {
   defaultData,
   ACTIONS,
 } from "../hooks/useUserReducer";
+import styled  from "styled-components";
+
+const StyledLabel = styled.label`
+width: 200px;
+`
+
+const StyledInputGroup = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 5px;
+`
+
+const StyledInput = styled.input`
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+
+  &:active {
+    border: 1px solid #666;
+  }
+`;
+
+const StyledFormBox = styled.div`
+padding: 5px;
+`
 
 const UserForm = () => {
   const [name, bindName, resetName] = useInput("");
@@ -34,38 +60,38 @@ const UserForm = () => {
   };
 
   return (
-    <div>
+    <StyledFormBox>
       <form onSubmit={submitHandler}>
-        <div>
-          <label>First Name</label>
-          <input type="text" {...bindName} />
-        </div>
+        <StyledInputGroup>
+          <StyledLabel>First Name</StyledLabel>
+          <StyledInput type="text" {...bindName} />
+        </StyledInputGroup>
 
-        <div>
-          <label>Postal Code</label>
-          <input type="text" {...bindPostalCode} />
-        </div>
+        <StyledInputGroup>
+          <StyledLabel>Postal Code</StyledLabel>
+          <StyledInput type="text" {...bindPostalCode} />
+        </StyledInputGroup>
 
-        <div>
-          <label>Email</label>
-          <input type="text" {...bindEmail} />
-        </div>
+        <StyledInputGroup>
+          <StyledLabel>Email</StyledLabel>
+          <StyledInput type="text" {...bindEmail} />
+        </StyledInputGroup>
 
-        <div>
-          <label>Location</label>
-          <input type="text" {...bindLocation} />
-        </div>
+        <StyledInputGroup>
+          <StyledLabel>Location</StyledLabel>
+          <StyledInput type="text" {...bindLocation} />
+        </StyledInputGroup>
 
-        <div>
-          <label>Zipcode</label>
-          <input type="text" {...bindZipcode} />
-        </div>
+        <StyledInputGroup>
+          <StyledLabel>Zipcode</StyledLabel>
+          <StyledInput type="text" {...bindZipcode} />
+        </StyledInputGroup>
 
-        <div>
+        <StyledInputGroup>
           <button type="submit">Submit</button>
-        </div>
+        </StyledInputGroup>
       </form>
-    </div>
+    </StyledFormBox>
   );
 };
 
