@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 const StyledNav = styled.nav`
   display: flex;
-  justify-content: space-between; // Evenly spaces the links
+  justify-content: flex-start; // Evenly spaces the links
   padding: 10px 0;
   background-color: #f5f5f5;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
