@@ -2,13 +2,12 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserForm from "./components/UserForm";
-import Home from './components/Home';
+import Home from "./components/Home";
 import Notfound from "./components/NotFound";
-import Users from './components/Users';
-import Profile from './components/Profile';
+import Users from "./components/Users";
+import Profile from "./components/Profile";
 import GlobalStyles from "./common/GlobalStyles";
-import { userReducer, ACTIONS, initialState } from './hooks/userReducer'
-
+import { userReducer, ACTIONS, initialState } from "./hooks/userReducer";
 
 const Wrapper = styled.div`
   max-width: 600px;
@@ -41,29 +40,30 @@ const StyledLink = styled(Link)`
   }
 `;
 
- export const UserContext = React.createContext();
+export const UserContext = React.createContext();
+
 function App() {
- const [state, dispatch] = useReducer(userReducer, initialState);
+  const [state, dispatch] = useReducer(userReducer, initialState);
   return (
     <UserContext.Provider value={{ state, dispatch }}>
-    <Router>
-      <Wrapper>
-        <StyledNav>
-          <StyledLink to="/">Home</StyledLink>
-          <StyledLink to="/users">Users</StyledLink>
-          <StyledLink to="/create">Add New User</StyledLink>
-        </StyledNav>
-        <Switch>
-          <Route exact={true} path="/" component={Home} />
-          <Route path="/users" component={Users} />
-          <Route path="/create" component={UserForm} />
-          <Route path="/edit/:id" component={UserForm} />
-          <Route path="/profile/:id" component={Profile} />
-          <Route path="*" component={Notfound} />
-        </Switch>
-        <GlobalStyles />
-      </Wrapper>
-    </Router>
+      <Router>
+        <Wrapper>
+          <StyledNav>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/users">Users</StyledLink>
+            <StyledLink to="/create">Add New User</StyledLink>
+          </StyledNav>
+          <Switch>
+            <Route exact={true} path="/" component={Home} />
+            <Route path="/users" component={Users} />
+            <Route path="/create" component={UserForm} />
+            <Route path="/edit/:id" component={UserForm} />
+            <Route path="/profile/:id" component={Profile} />
+            <Route path="*" component={Notfound} />
+          </Switch>
+          <GlobalStyles />
+        </Wrapper>
+      </Router>
     </UserContext.Provider>
   );
 }
