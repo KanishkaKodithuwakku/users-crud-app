@@ -5,7 +5,8 @@ import useUserThunkReducer, {
   defaultData,
   ACTIONS,
 } from "../hooks/useUserReducer";
-import styled  from "styled-components";
+import styled from "styled-components";
+import { ButtonPrimary } from '../common/Buttons'
 
 const StyledLabel = styled.label`
 width: 200px;
@@ -88,7 +89,7 @@ const UserForm = () => {
         </StyledInputGroup>
 
         <StyledInputGroup>
-          <button type="submit">Submit</button>
+          <ButtonPrimary type="submit">Add New User</ButtonPrimary>
         </StyledInputGroup>
       </form>
     </StyledFormBox>
