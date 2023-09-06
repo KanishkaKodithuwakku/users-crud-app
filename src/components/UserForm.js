@@ -11,6 +11,7 @@ import styled from "styled-components";
 import { ButtonPrimary } from "../common/Buttons";
 
 import { useHistory, useParams } from "react-router-dom";
+import Title from "./Title";
 
 const StyledLabel = styled.label`
   width: 200px;
@@ -106,6 +107,7 @@ useEffect(() => {
 
   return (
     <StyledFormBox>
+      <Title title={`Add New User`}/>
       <form onSubmit={submitHandler}>
         <StyledInputGroup>
           <StyledLabel>First Name</StyledLabel>

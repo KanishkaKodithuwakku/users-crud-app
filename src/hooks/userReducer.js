@@ -1,7 +1,4 @@
 
-
-
-
 export const ACTIONS = {
   ADD_USER: "ADD_USER",
   EDIT_USER: "EDIT_USER",
