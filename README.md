@@ -1,4 +1,4 @@
-# React User Management App  <a href="https://kanishkakodithuwakku.github.io/users-crud-app/">Live Demo</>
+# React User Management App  <a href="https://kanishkakodithuwakku.github.io/users-crud-app">Live Demo</a>
 This application serves as a foundational platform for beginners to understand the core concepts of React JS. 
 
 ![App Screenshot](./public/add_new_user.png)
