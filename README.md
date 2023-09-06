@@ -1,6 +1,10 @@
 # React User Management App
 This application serves as a foundational platform for beginners to understand the core concepts of React JS. 
 
+![App Screenshot](./public/add_new_user.png)
+![App Screenshot](./public/users.png)
+![App Screenshot](./public/routings.png)
+
 # 🌟Features:
 
 + **Default Users:** Starts with two pre-defined user data sets. 
