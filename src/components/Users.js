@@ -9,6 +9,7 @@ import { SpaceBetween } from "../common/Flexs";
 import { ButtonPrimary } from "../common/Buttons";
 
 import { UserContext } from "../App";
+import Title from "./Title";
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -29,7 +30,7 @@ const Users = () => {
   const { users } = state;
   return (
     <div>
-      <h1>Users</h1>
+      <Title title={`Users` } />
 
       <StyledUl>
         {users &&
